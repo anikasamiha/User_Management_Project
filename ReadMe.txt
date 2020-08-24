@@ -1,4 +1,4 @@
-I've developed this project on a windows machine. So, may be if you are on a mac, processes will be a bit different. Since I have only windows, so I'm describing processes to run the project
+I've developed this project on a windows machine using python. So, may be if you are on a mac, processes will be a bit different. Since I have only windows, so I'm describing processes to run the project
 for a windows machine.
 
 Firstly, some softwares needs to be pre-installed on the system.

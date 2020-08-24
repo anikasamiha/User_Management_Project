@@ -1,0 +1,54 @@
+{% extends 'family_register/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block page_name %}
+<h1>welcome to parent form page</h1>
+{% endblock page_name %}
+
+{% block content %}
+
+<form action="" method="POST" autocomplete="off">
+    {% csrf_token %}
+    <div class="alert alert-primary">
+            <h3 class="text-center">{{ heading }}</h3>
+    </div>
+
+    <label><strong>Names</strong></label>
+    <div class="row">
+      <div class="col">
+        {{form.first_name|as_crispy_field}}
+      </div>
+      <div class="col">
+        {{form.last_name|as_crispy_field}}
+      </div>
+    </div>
+    <label><strong>Address</strong></label>
+
+    <div class="form-group">
+        {{form.street|as_crispy_field}}
+    </div>
+
+    <div class="form-row">
+        <div class="col-7">
+            {{form.city|as_crispy_field}}
+        </div>
+        <div class="col">
+            {{form.state|as_crispy_field}}
+        </div>
+        <div class="col">
+            {{form.zip|as_crispy_field}}
+        </div>
+    </div>
+    <br>
+
+    <div class="row">
+      <div class="col-md-8">
+        <button type="submit" class="btn btn-primary alert alert-primary"><i class="fas fa-sync fa-spin"></i> Create Parent</button>
+      </div>
+      <div class="col-md-4">
+          <a href="{% url 'parent_list_url' %}" class="btn btn-warning alert alert-warning"><i class="fa fa-database" aria-hidden="true"></i> To Parent list</a>
+      
+      </div>
+  </div>
+  </form>
+ {% endblock content %}

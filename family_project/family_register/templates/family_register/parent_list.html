@@ -1,0 +1,43 @@
+{% extends 'family_register/base.html' %}
+
+{% block page_name %}
+<h1>welcome to Parent list page</h1>
+{% endblock page_name %}
+
+{% block content %}
+<table class="table table-borderless">
+    <thead class="border-bottom font-weight-bold">
+        <tr>
+            <td>First Name</td>
+            <td>Last Name</td>
+            <td>Address</td>
+            <td><a href="{% url 'parent_form_url' %}" class="btn btn-primary"><i class="fas fa-plus">Add New</i></a></td>
+        </tr>
+    </thead>
+    <tbody>
+        {% for parent in parent_list %}
+            <tr>
+                <td>{{parent.first_name}}</td>
+                <td>{{parent.last_name}}</td>
+                <td>{{parent.address}}</td>
+                <td>
+                    <a href="{% url 'parent_edit_url' parent.id %}" class="btn text-secondary px-0">
+                        <i class="far fa-edit fa-lg"></i>
+                    </a>
+                    <form action="{% url 'parent_delete_url' parent.id %}" method="POST" class="d-inline"> {% csrf_token %}
+                        <button type="submit" class="btn">
+                            <i class="fa fa-trash-alt fa-lg text-danger float-right"></i>
+                        </button>
+                    </form>
+                </td>
+                
+        {% endfor %}
+    </tbody>
+</table>
+
+<p class="lead">
+    <a class="btn btn-info btn-lg" href="{% url 'home_url' %}" role="button"><i class="fa fa-home" aria-hidden="true"></i> Back to Home</a>
+</p>
+
+{% endblock content %}
+

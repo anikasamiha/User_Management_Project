@@ -1,0 +1,33 @@
+{% extends 'family_register/base.html' %}
+
+{% block page_name %}
+<h1>welcome to homepage</h1>
+{% endblock page_name %}
+
+{% block content %}
+<div class="jumbotron">
+    <h3>What do you want to create? please select from below.</h3>
+    <div class="form-row">
+        <p class="lead col-md-3">
+            <a class="btn btn-primary btn-lg" href="{% url 'parent_form_url' %}" role="button"><i class="fas fa-sync fa-spin"></i> Create Parent</a>
+          </p>
+
+          <p class="lead">
+            <a class="btn btn-success btn-lg" href="{% url 'child_form_url' %}" role="button"><i class="fa fa-child" aria-hidden="true"></i> Create Child</a>
+          </p>
+
+    </div>
+
+    <div class="form-row">
+      <p class="lead col-md-3">
+          <a class="btn btn-warning btn-lg" href="{% url 'parent_list_url' %}" role="button"><i class="fa fa-database" aria-hidden="true"></i> Parent list</a>
+        </p>
+
+        <p class="lead">
+          <a class="btn btn-warning btn-lg" href="{% url 'child_list_url' %}" role="button"><i class="fa fa-database" aria-hidden="true"></i> Child List</a>
+        </p>
+
+  </div>
+    
+</div>
+{% endblock content %}

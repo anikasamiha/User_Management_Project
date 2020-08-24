@@ -7,6 +7,7 @@ They are:
 and pgadmin is the interface to look into the database manually). Keep the username 'postgres' & the password '1234' as mentioned in the project settings file. 
 You can use other username and password, but then you'll have to change it in the project settings file also.
 2. Virtualenv
+3. python 3
 
 Now the running processes step by step:
 

@@ -40,7 +40,11 @@ Now run the following commands serially:
 'python manage.py makemigrations'
 'python manage.py migrate'
 
-Step-6:
+Step-6//
+create an admin with this command:
+'python manage.py createsuperuser'
+
+Step-7//
 We are now ready to run the project. To run the project, run the following command:
 'python manage.py runserver'
 
